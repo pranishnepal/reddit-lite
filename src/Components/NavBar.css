@@ -1,0 +1,57 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 10% 90%;
+    height: 70px;
+    justify-items: center;
+    align-items: center;
+
+    border: 1px solid black;
+}
+
+
+.logo-and-name {
+    display: flex;
+    align-items: center;
+}
+
+.reddit-logo {
+    color: var(--reddit-logo-color);
+}
+
+.reddit-logo:hover {
+    transition-property: color;
+    transition-duration: 1.5s;
+    transition-timing-function: linear;
+    color: 	#7F4FC4;
+}
+
+.logo-name {
+    font-weight: 600;
+    padding-left: 5px;
+}
+
+.logo-name span {
+    color: var(--reddit-logo-color);
+}
+
+.input-form {
+    display: flex;
+    width: 45%;
+    column-gap: 5px;
+}
+
+.input-form input {
+    flex-grow: 2;
+    border-radius: 5px;
+    background-color: #f3f3f3;
+    border: none;
+    height: 30px;
+    width: auto;
+}
+
+.input-form button {
+    border: none;
+    background: none;
+    cursor: pointer;
+}
