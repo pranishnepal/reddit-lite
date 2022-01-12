@@ -1,0 +1,60 @@
+.post-container {
+    display: grid;
+    width: 70%;
+    overflow: hidden;
+    margin: 1.5% 1% 1%;
+    border-radius: 5px;
+    box-shadow: var(--box-shadow);
+
+}
+
+.post-container:hover {
+    box-shadow: var(--box-shadow-on-hover);
+}
+
+.op-and-time {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid gray;
+}
+
+.upvote-downvote {
+    display: flex;
+    flex-direction: column;
+    float: left;
+    padding-left: 1%;
+    padding-top: 1%;
+}
+
+.upvote-downvote p{
+    font-weight: bold;
+}
+
+.post-image {
+    display: flex;
+    justify-content: center;
+}
+
+.post-image img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.post h3 {
+    position: relative;
+    left: 2%;
+}
+
+.op-and-time #author {
+    color: blue;
+    font-weight: bold;
+    left: 5%;
+    position: relative;
+}
+
+.op-and-time #time {
+    right: 5%;
+    position: relative;
+}
+

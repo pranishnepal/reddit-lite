@@ -48,6 +48,7 @@
     border: none;
     height: 30px;
     width: auto;
+    box-shadow: var(--box-shadow);
 }
 
 .input-form button {
