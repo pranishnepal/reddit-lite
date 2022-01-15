@@ -7,8 +7,10 @@
     --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     --box-shadow-on-hover: rgba(0, 0, 0, 0.35) 0px 5px 15px;
     --faded-gray-color: #e6e6e6;
-    --active-subreddit-background: #3d5af140;
-    --active-subreddit-line: #3d5af1;
+    --active-subreddit-background: #FFB100;
+    --active-subreddit-line: #FF4300;
+    --reddit-green: #3BCB56;
+    --reddit-red: #ED001C;
 }
 
 .main-container {

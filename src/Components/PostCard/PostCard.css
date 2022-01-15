@@ -29,6 +29,14 @@
     font-weight: bold;
 }
 
+.upvote:hover {
+    color: var(--reddit-green);
+}
+
+.downvote:hover {
+    color: var(--reddit-red);
+}
+
 .post-image {
     display: flex;
     justify-content: center;

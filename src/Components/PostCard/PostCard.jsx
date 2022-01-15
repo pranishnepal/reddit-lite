@@ -16,9 +16,9 @@ export const PostCard = () => {
 
             <div>
                 <div className="upvote-downvote">
-                    <BiUpvote size={25}/>
+                    <BiUpvote size={25} className = "upvote"/>
                     <p>{totalVotes}</p>
-                    <BiDownvote size={25}/>
+                    <BiDownvote size={25} className = "downvote"/>
                 </div>
 
                 {/* Post: R1 */}
