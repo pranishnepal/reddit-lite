@@ -6,4 +6,15 @@
     --reddit-logo-color: #FF5700;
     --box-shadow: rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
     --box-shadow-on-hover: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    --faded-gray-color: #e6e6e6;
+    --active-subreddit-background: #3d5af140;
+    --active-subreddit-line: #3d5af1;
+}
+
+.main-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 75% 23%;
+    column-gap: 2%;
+    overflow: hidden;
 }

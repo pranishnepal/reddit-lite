@@ -6,7 +6,7 @@ export const NavBar = () => {
     return (
         <nav className="container">
             <div className="logo-and-name">
-                <FaReddit className = "reddit-logo" size={40}/>
+                <FaReddit className = "reddit-logo" size={35}/>
                 <div className="logo-name"> Reddit<span>Lite</span></div>
             </div>
             <form className="input-form">

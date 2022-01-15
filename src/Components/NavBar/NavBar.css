@@ -5,8 +5,7 @@
     height: 70px;
     justify-items: center;
     align-items: center;
-
-    border: 1px solid black;
+    box-shadow: var(--box-shadow);
 }
 
 
@@ -44,7 +43,7 @@
 .input-form input {
     flex-grow: 2;
     border-radius: 5px;
-    background-color: #f3f3f3;
+    background-color: var(--faded-gray-color);
     border: none;
     height: 30px;
     width: auto;
@@ -55,4 +54,13 @@
     border: none;
     background: none;
     cursor: pointer;
+}
+
+@media only screen and (min-width: 300px) and (max-width: 700px) {
+    .logo-and-name {
+        position: relative;
+        left: 70%;
+        display: flex;
+        align-items: center;
+    }
 }
