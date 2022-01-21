@@ -16,7 +16,7 @@
 .main-container {
     width: 100%;
     display: grid;
-    grid-template-columns: 75% 21%;
+    grid-template-columns: 75% 22%;
     column-gap: 1%;
     overflow: hidden;
 }

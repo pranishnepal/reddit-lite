@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 /* state for `redditDataSlice` */
 const initialState = {
-    subReddit: "r/memes/",
+    selectedSubReddit: "r/pics/",
     posts: [],
     isLoading: false,
     hasError: false,
@@ -26,6 +26,9 @@ const redditDataSlice = createSlice({
             state.hasError = true;
             state.isLoading = false;
         },
+        updateSubReddit: (state, action) => {
+            state.selectedSubReddit = action.payload;
+        }
     }
 });
 
@@ -33,6 +36,7 @@ export const {
     postsFetchPending,
     postsFetchFulfilled,
     postsFetchRejected,
+    updateSubReddit,
 } = redditDataSlice.actions;
 
 export default redditDataSlice.reducer;
@@ -51,5 +55,4 @@ export const postsFetch = (subRedditName) => {
     }
 }
 
-// Selector functions
-export const selectRedditData = (state) => state.redditData;
+

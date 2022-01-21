@@ -49,7 +49,7 @@ export const PostCard = ({imgURL, postTitle, authorUserName, postedTimeAgo, scor
 
             {/* Image: R2 */}
             <div className="post-image">
-                <img src={imgURL}/>
+                <img src={imgURL} onError={(event) => event.target.style.display = 'none'}/>
             </div>
 
             {/* Author and Post Time: R3 */}
@@ -62,7 +62,7 @@ export const PostCard = ({imgURL, postTitle, authorUserName, postedTimeAgo, scor
 };
 
 PostCard.propTypes = {
-    imgURL: PropTypes.string.isRequired,
+    imgURL: PropTypes.string,
     postTitle: PropTypes.string.isRequired,
     authorUserName: PropTypes.string.isRequired,
     postedTimeAgo: PropTypes.number.isRequired,

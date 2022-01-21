@@ -2,18 +2,18 @@ import React, {useEffect} from 'react';
 import {PostCard} from "../PostCard/PostCard";
 import "./Posts.css";
 import {useDispatch, useSelector} from "react-redux";
-import {postsFetch, selectRedditData} from "../../Store/RedditData";
+import {postsFetch} from "../../Store/RedditData";
 import {Rings} from "react-loader-spinner";
 import "./Posts.css";
 import {shortenNumberToUnit} from "../../Utils/NumberUnitConverter";
 import moment from "moment";
-
+import {selectRedditData} from "../../Store";
 
 export const Posts = () => {
     const dispatch = useDispatch();
     const redditData = useSelector(selectRedditData);
-    const {subReddit, posts, isLoading, hasError} = redditData;
-    const subRedditName = "r/memes";
+    const {selectedSubReddit, posts, isLoading, hasError} = redditData;
+    const subRedditName = selectedSubReddit;
 
     useEffect(() => {
         /* Call the async-thunk action creator with appropriate subreddit */
@@ -41,19 +41,16 @@ export const Posts = () => {
         <div>
             {
                 posts.map((item) => {
-                    const hasImageURL = item.url_overridden_by_dest;
-                    if (hasImageURL) {
-                        return (
-                            <PostCard
-                                key={item.id}
-                                postedTimeAgo={moment.unix(item.created_utc).fromNow()}
-                                imgURL={item.url_overridden_by_dest}
-                                authorUserName={item.author}
-                                postTitle={item.title}
-                                score={shortenNumberToUnit(item.ups, 1)}
-                            />
-                        )
-                    }
+                    return (
+                        <PostCard
+                            key={item.id}
+                            postedTimeAgo={moment.unix(item.created_utc).fromNow()}
+                            imgURL={item.url_overridden_by_dest}
+                            authorUserName={item.author}
+                            postTitle={item.title}
+                            score={shortenNumberToUnit(item.ups, 1)}
+                        />
+                    )
                 })
             }
         </div>
