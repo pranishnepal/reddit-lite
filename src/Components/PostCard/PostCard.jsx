@@ -1,17 +1,44 @@
-import React from 'react';
+import React, {useState} from 'react';
 import "./PostCard.css";
 import {BiUpvote, BiDownvote} from "react-icons/bi";
 import PropTypes from "prop-types";
 
 export const PostCard = ({imgURL, postTitle, authorUserName, postedTimeAgo, score}) => {
+
+    const [isUpVoteActive, setUpVoteActive] = useState(false);
+    const [isDownVoteActive, setDownVoteActive] = useState(false);
+
+    const handleUpVoteClick = () => {
+        if (isDownVoteActive) {
+            setDownVoteActive(false);
+        }
+        setUpVoteActive(!isUpVoteActive);
+    }
+
+    const handleDownVoteClick = () => {
+        if (isUpVoteActive) {
+            setUpVoteActive(false);
+        }
+
+        setDownVoteActive(!isDownVoteActive);
+    }
+
     return (
         <div className="post-container">
             {/* Up-vote and down-vote: R1 */}
             <div>
                 <div className="upvote-downvote">
-                    <BiUpvote size={25} className="upvote"/>
+                    <BiUpvote
+                        size={25}
+                        className={isUpVoteActive ? "upvote-clicked" : "upvote"}
+                        onClick={handleUpVoteClick}
+                    />
                     <p>{score}</p>
-                    <BiDownvote size={25} className="downvote"/>
+                    <BiDownvote
+                        size={25}
+                        className={isDownVoteActive ? "downvote-clicked" : "downvote"}
+                        onClick={handleDownVoteClick}
+                    />
                 </div>
 
                 {/* Post: R1 */}
