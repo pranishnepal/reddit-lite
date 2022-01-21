@@ -49,7 +49,7 @@ export const PostCard = ({imgURL, postTitle, authorUserName, postedTimeAgo, scor
 
             {/* Image: R2 */}
             <div className="post-image">
-                <img src={imgURL} onError={(event) => event.target.style.display = 'none'}/>
+                <img src={imgURL} id="post-img" onError={(event) => event.target.style.display = 'none'}/>
             </div>
 
             {/* Author and Post Time: R3 */}

@@ -3,7 +3,7 @@ import {createSlice} from "@reduxjs/toolkit";
 
 /* state for `redditDataSlice` */
 const initialState = {
-    selectedSubReddit: "r/pics/",
+    selectedSubReddit: "r/pics",
     posts: [],
     isLoading: false,
     hasError: false,
@@ -14,7 +14,6 @@ const redditDataSlice = createSlice({
     initialState: initialState,
     reducers: {
         postsFetchPending: (state, action) => {
-            console.log("Fetch started");
             state.isLoading = true;
             state.hasError = false;
         },

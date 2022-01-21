@@ -4,16 +4,11 @@
     margin: 1.5% 5% 1.5% 5%;
     border-radius: 5px;
     box-shadow: var(--box-shadow);
+    overflow: hidden;
 }
 
 .post-container:hover {
     box-shadow: var(--box-shadow-on-hover);
-}
-
-.op-and-time {
-    display: flex;
-    justify-content: space-between;
-    border-top: 1px solid gray;
 }
 
 .upvote-downvote {
@@ -37,19 +32,35 @@
 }
 
 .post-image {
+    overflow: hidden;
+    width: 100%;
     display: flex;
     justify-content: center;
+    justify-self: center;
 }
 
-.post-image img {
-    max-width: 100%;
+#post-img {
+    max-width: 50%;
     height: auto;
+    margin-bottom: 10px;
+    display: block;
+    margin-top: 10px;
+}
+
+.post {
     display: block;
 }
 
 .post h3 {
     position: relative;
     left: 2%;
+
+}
+
+.op-and-time {
+    display: flex;
+    justify-content: space-between;
+    border-top: 1px solid gray;
 }
 
 .op-and-time #author {
@@ -70,4 +81,14 @@
 
 .downvote-clicked {
     color: var(--reddit-red);
+}
+
+@media only screen and (min-width: 320px) and (max-width: 768px) {
+    #post-img {
+        max-width: 100% !important;
+        height: auto;
+        margin-bottom: 10px;
+        display: block;
+        margin-top: 10px;
+    }
 }
