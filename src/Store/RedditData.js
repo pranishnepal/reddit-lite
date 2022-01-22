@@ -7,6 +7,7 @@ const initialState = {
     posts: [],
     isLoading: false,
     hasError: false,
+    searchTerm: "",
 };
 
 const redditDataSlice = createSlice({
@@ -27,7 +28,10 @@ const redditDataSlice = createSlice({
         },
         updateSubReddit: (state, action) => {
             state.selectedSubReddit = action.payload;
-        }
+        },
+        updateSearchTerm: (state, action) => {
+            state.searchTerm = action.payload;
+        },
     }
 });
 
@@ -36,6 +40,7 @@ export const {
     postsFetchFulfilled,
     postsFetchRejected,
     updateSubReddit,
+    updateSearchTerm
 } = redditDataSlice.actions;
 
 export default redditDataSlice.reducer;

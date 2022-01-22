@@ -1,6 +1,22 @@
-.error {
+.error-message {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
+    position: relative;
+    overflow: hidden;
+
+}
+
+.error-button {
+    background-color: var(--reddit-logo-color);
+    color: white;
+    border: none;
+    display: flex;
+    width: 10%;
+    justify-content: center;
+    justify-items: center;
+    padding-top: 5px;
+    height: 30px;
+    border-radius: 3px;
+    cursor: pointer;
 }

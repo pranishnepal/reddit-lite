@@ -2,18 +2,19 @@ import React, {useEffect} from 'react';
 import {PostCard} from "../PostCard/PostCard";
 import "./Posts.css";
 import {useDispatch, useSelector} from "react-redux";
-import {postsFetch} from "../../Store/RedditData";
+import {postsFetch, updateSearchTerm} from "../../Store/RedditData";
 import {Rings} from "react-loader-spinner";
 import "./Posts.css";
 import {shortenNumberToUnit} from "../../Utils/NumberUnitConverter";
 import moment from "moment";
-import {selectRedditData} from "../../Store";
+import {selectFilteredPosts, selectRedditData} from "../../Store";
 
 export const Posts = () => {
     const dispatch = useDispatch();
     const redditData = useSelector(selectRedditData);
-    const {selectedSubReddit, posts, isLoading, hasError} = redditData;
+    const {selectedSubReddit, isLoading, hasError} = redditData;
     const subRedditName = selectedSubReddit;
+    const posts = useSelector(selectFilteredPosts);
 
     useEffect(() => {
         /* Call the async-thunk action creator with appropriate subreddit */
@@ -25,13 +26,26 @@ export const Posts = () => {
         return (
             <Rings color="#FF5700" height={800} width={800}/>
         );
-    } else if (hasError) {
+    }
+
+    if (hasError) {
         /* API data fetch unsuccessful */
         return (
-            <div>
+            <div className="error-message">
                 <h1>API Fetch failed :(</h1>
                 <button className="error-button" onClick={() => dispatch(postsFetch())}>
                     Try again!
+                </button>
+            </div>
+        )
+    }
+
+    if (posts.length === 0) {
+        return (
+            <div className="error-message">
+                <h3>No matching posts found for "{redditData.searchTerm}" 😔 </h3>
+                <button className="error-button" onClick={() => dispatch(updateSearchTerm(""))}>
+                    Home
                 </button>
             </div>
         )
