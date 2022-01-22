@@ -19,7 +19,7 @@ export const Posts = () => {
     useEffect(() => {
         /* Call the async-thunk action creator with appropriate subreddit */
         dispatch(postsFetch(subRedditName));
-    }, [subRedditName]);
+    }, [subRedditName, dispatch]);
 
     /* API data being fetched */
     if (isLoading) {

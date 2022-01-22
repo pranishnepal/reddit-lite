@@ -10,11 +10,11 @@ export const SubredditSideBar = () => {
     const dispatch = useDispatch();
     const redditData = useSelector(selectRedditData);
     const subRedditData = useSelector(selectSubRedditData);
-    const {isLoading, hasError, subReddits} = subRedditData;
+    const {isLoading, subReddits} = subRedditData;
 
     useEffect(() => {
         dispatch(subRedditsFetch());
-    }, [subReddits.length]);
+    }, [subReddits.length, dispatch]);
 
     if (isLoading) {
         return (
@@ -28,7 +28,7 @@ export const SubredditSideBar = () => {
             {
                 subReddits.map((subReddit) => {
                     const shouldApplyStyling = subReddit.display_name_prefixed === redditData.selectedSubReddit;
-                    
+
                     return (
                         <IndividualSubReddit
                             subRedditName={subReddit.display_name_prefixed}
