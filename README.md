@@ -1,4 +1,4 @@
-### Minimal reddit web-app made with React, Redux and Redux Toolkit
+Minimal reddit web-app made with React, Redux and Redux Toolkit
 
 <hr>
 
